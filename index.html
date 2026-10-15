@@ -1,0 +1,2370 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio professionnel de Simadou Ahondo Kossi Germain — Développeur Web & Mobile à Lomé, Togo, en reconversion depuis la logistique portuaire.">
+  <title>Simadou Ahondo Kossi Germain — Développeur Web &amp; Mobile | Lomé, Togo</title>
+
+  <!-- Google Fonts : Fraunces (Serif expressive) et Work Sans (Sans-serif claire) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       VARIABLES CSS & THÈMES
+       ========================================================================== */
+    :root {
+      /* Mode clair : papier crème, texte foncé, indigo profond, ochre & terracotta */
+      --bg-body: #F7F3EC;
+      --bg-surface: #FFFFFF;
+      --bg-surface-elevated: #EDE7DC;
+      --bg-card: #FFFFFF;
+      --text-main: #1B1B18;
+      --text-muted: #57564F;
+      --text-faint: #7C7A72;
+      --border-subtle: rgba(27, 27, 24, 0.1);
+      --border-strong: rgba(27, 27, 24, 0.22);
+
+      --color-indigo: #12213D;
+      --color-indigo-dark: #0B1730;
+      --color-ochre: #E08D2C;
+      --color-ochre-hover: #C5781E;
+      --color-terracotta: #C1440E;
+      --color-terracotta-hover: #A53609;
+
+      /* Hero Overlay Clair */
+      --hero-overlay-start: rgba(247, 243, 236, 0.96);
+      --hero-overlay-mid: rgba(247, 243, 236, 0.85);
+      --hero-overlay-end: rgba(18, 33, 61, 0.25);
+      --hero-photo-opacity: 0.32;
+
+      /* Ombres & Rayons */
+      --shadow-sm: 0 2px 8px rgba(18, 33, 61, 0.06);
+      --shadow-md: 0 8px 24px rgba(18, 33, 61, 0.08);
+      --shadow-lg: 0 16px 36px rgba(18, 33, 61, 0.12);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+
+      /* Typographie */
+      --font-serif: 'Fraunces', Georgia, serif;
+      --font-sans: 'Work Sans', system-ui, -apple-system, sans-serif;
+
+      --transition-base: 250ms ease;
+    }
+
+    [data-theme="dark"] {
+      /* Mode sombre : anthracite / quasi-noir, texte clair cassé, cartes foncées */
+      --bg-body: #0F1216;
+      --bg-surface: #14181D;
+      --bg-surface-elevated: #1B1F26;
+      --bg-card: #1B1F26;
+      --text-main: #EDEAE2;
+      --text-muted: #A6A49C;
+      --text-faint: #7A7870;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.18);
+
+      --color-indigo: #182B4E;
+      --color-indigo-dark: #0D1628;
+      --color-ochre: #D38426;
+      --color-ochre-hover: #E39436;
+      --color-terracotta: #B94413;
+      --color-terracotta-hover: #CE5420;
+
+      /* Hero Overlay Sombre */
+      --hero-overlay-start: rgba(15, 18, 22, 0.97);
+      --hero-overlay-mid: rgba(15, 18, 22, 0.88);
+      --hero-overlay-end: rgba(20, 24, 29, 0.45);
+      --hero-photo-opacity: 0.24;
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+      --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.65);
+    }
+
+    /* ==========================================================================
+       RESET & BASE
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: background-color var(--transition-base), color var(--transition-base);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-base);
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    button, input, textarea {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    /* Accessibilité : Focus visible */
+    :focus-visible {
+      outline: 3px solid var(--color-ochre);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -60px;
+      left: 16px;
+      background: var(--color-indigo);
+      color: #FFFFFF;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      z-index: 2000;
+      font-weight: 600;
+      transition: top var(--transition-base);
+    }
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin-inline: auto;
+      padding-inline: 24px;
+    }
+
+    .section-padding {
+      padding-block: 96px;
+    }
+
+    @media (max-width: 768px) {
+      .section-padding {
+        padding-block: 64px;
+      }
+      .container {
+        padding-inline: 18px;
+      }
+    }
+
+    /* Titres et textes */
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      color: var(--text-main);
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .section-kicker {
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--color-terracotta);
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.8vw, 2.75rem);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-subtitle {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+
+    /* Boutons standards */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 26px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all var(--transition-base);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--color-indigo);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(18, 33, 61, 0.2);
+    }
+    [data-theme="dark"] .btn-primary {
+      background-color: var(--color-ochre);
+      color: #111417;
+      box-shadow: 0 4px 14px rgba(224, 141, 44, 0.25);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background-color: #0B1730;
+      box-shadow: 0 6px 20px rgba(18, 33, 61, 0.3);
+    }
+    [data-theme="dark"] .btn-primary:hover {
+      background-color: var(--color-ochre-hover);
+      color: #000000;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border-color: var(--border-strong);
+      color: var(--text-main);
+    }
+    .btn-outline:hover {
+      border-color: var(--color-ochre);
+      color: var(--color-ochre);
+      transform: translateY(-2px);
+      background-color: rgba(224, 141, 44, 0.05);
+    }
+
+    /* ==========================================================================
+       BARRE DE NAVIGATION (HEADER)
+       ========================================================================== */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background-color: rgba(247, 243, 236, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 1000;
+      transition: background-color var(--transition-base), border-color var(--transition-base);
+    }
+    [data-theme="dark"] .site-nav {
+      background-color: rgba(15, 18, 22, 0.92);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+    }
+    .nav-logo-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--color-indigo), var(--color-terracotta));
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 6px;
+    }
+
+    .nav-link {
+      padding: 8px 14px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      border-radius: var(--radius-full);
+      position: relative;
+      transition: all var(--transition-base);
+    }
+    .nav-link:hover {
+      color: var(--text-main);
+      background-color: var(--border-subtle);
+    }
+    .nav-link.active {
+      color: var(--color-terracotta);
+      font-weight: 600;
+      background-color: rgba(193, 68, 14, 0.08);
+    }
+    [data-theme="dark"] .nav-link.active {
+      color: var(--color-ochre);
+      background-color: rgba(224, 141, 44, 0.12);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Bouton Bascule Thème */
+    .theme-toggle-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-surface);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      cursor: pointer;
+      transition: all var(--transition-base);
+    }
+    .theme-toggle-btn:hover {
+      border-color: var(--color-ochre);
+      background-color: rgba(224, 141, 44, 0.1);
+      transform: rotate(15deg);
+    }
+
+    /* Hamburger Mobile */
+    .hamburger-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      background: transparent;
+      color: var(--text-main);
+      cursor: pointer;
+      padding: 10px;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .hamburger-btn span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: currentColor;
+      border-radius: 2px;
+      transition: all 0.25s ease;
+    }
+    .hamburger-btn[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger-btn[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger-btn[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    @media (max-width: 900px) {
+      .hamburger-btn {
+        display: flex;
+      }
+      .nav-menu {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-surface);
+        border-bottom: 1px solid var(--border-strong);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 24px;
+        gap: 10px;
+        transform: translateY(-120%);
+        transition: transform 0.3s ease;
+        box-shadow: var(--shadow-lg);
+        pointer-events: none;
+        opacity: 0;
+      }
+      .nav-menu.open {
+        transform: translateY(0);
+        pointer-events: auto;
+        opacity: 1;
+      }
+      .nav-link {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 1.05rem;
+      }
+    }
+
+    /* ==========================================================================
+       SECTION 1 : HERO (#accueil) AVEC PHOTO EN FONDUE
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 110px;
+      padding-bottom: 70px;
+      overflow: hidden;
+      background: var(--bg-body);
+    }
+
+    /* Photo de fond discrète et fondue */
+    .hero-bg-photo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 55%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: var(--hero-photo-opacity);
+      pointer-events: none;
+      z-index: 1;
+      filter: blur(0.5px);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,1) 75%), linear-gradient(to top, transparent 0%, rgba(0,0,0,1) 25%);
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,1) 75%), linear-gradient(to top, transparent 0%, rgba(0,0,0,1) 25%);
+      -webkit-mask-composite: source-in;
+      mask-composite: intersect;
+      transition: opacity var(--transition-base);
+    }
+
+    /* Overlay dégradé de protection du texte */
+    .hero-backdrop-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--hero-overlay-start) 0%, var(--hero-overlay-mid) 48%, var(--hero-overlay-end) 100%);
+      pointer-events: none;
+      z-index: 2;
+      transition: background var(--transition-base);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 740px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background-color: var(--border-subtle);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+    .hero-badge-pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+    }
+
+    .hero-name {
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .hero-name span {
+      color: var(--color-terracotta);
+    }
+    [data-theme="dark"] .hero-name span {
+      color: var(--color-ochre);
+    }
+
+    .hero-role {
+      font-family: var(--font-sans);
+      font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+
+    .hero-bio {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--text-main);
+      margin-bottom: 34px;
+      max-width: 640px;
+    }
+    .hero-bio strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    /* Carte contact rapide & Réseaux sociaux */
+    .hero-meta-panel {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: center;
+      padding: 22px 26px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      max-width: 680px;
+    }
+
+    .quick-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.92rem;
+    }
+    .quick-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-muted);
+    }
+    .quick-contact-item svg {
+      width: 17px;
+      height: 17px;
+      color: var(--color-ochre);
+      flex-shrink: 0;
+    }
+    .quick-contact-item a:hover {
+      color: var(--color-terracotta);
+      text-decoration: underline;
+    }
+    [data-theme="dark"] .quick-contact-item a:hover {
+      color: var(--color-ochre);
+    }
+
+    /* RANGÉE ICÔNES RÉSEAUX SOCIAUX */
+    .social-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-left: 1px solid var(--border-subtle);
+      padding-left: 24px;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: all var(--transition-base);
+    }
+    .social-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      transition: transform var(--transition-base);
+    }
+    .social-btn:hover {
+      color: #FFFFFF;
+      background-color: var(--color-indigo);
+      border-color: var(--color-indigo);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(18, 33, 61, 0.2);
+    }
+    [data-theme="dark"] .social-btn:hover {
+      background-color: var(--color-ochre);
+      border-color: var(--color-ochre);
+      color: #111417;
+      box-shadow: 0 6px 14px rgba(224, 141, 44, 0.3);
+    }
+    .social-btn:hover svg {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 900px) {
+      .hero-bg-photo {
+        width: 100%;
+        opacity: 0.18;
+        object-position: center 20%;
+        -webkit-mask-image: radial-gradient(circle at 60% 40%, rgba(0,0,0,1) 30%, transparent 80%);
+        mask-image: radial-gradient(circle at 60% 40%, rgba(0,0,0,1) 30%, transparent 80%);
+      }
+      .hero-backdrop-gradient {
+        background: linear-gradient(180deg, var(--hero-overlay-start) 0%, var(--hero-overlay-mid) 70%, var(--hero-overlay-start) 100%);
+      }
+      .hero-meta-panel {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .social-row {
+        border-left: none;
+        border-top: 1px solid var(--border-subtle);
+        padding-left: 0;
+        padding-top: 14px;
+      }
+    }
+
+    /* ==========================================================================
+       SECTION 2 : À PROPOS (#apropos)
+       ========================================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 56px;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+
+    .about-photo-wrapper {
+      position: relative;
+    }
+    .about-photo-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-strong);
+      box-shadow: var(--shadow-md);
+      background-color: var(--bg-surface);
+    }
+    .about-photo-card img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      object-position: center top;
+      filter: contrast(1.03);
+    }
+    .about-photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 16px 20px;
+      background: linear-gradient(to top, rgba(11, 23, 48, 0.95), transparent);
+      color: #FFFFFF;
+      font-size: 0.88rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .about-photo-caption span:first-child {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .about-text h3 {
+      font-size: 1.75rem;
+      margin-bottom: 18px;
+    }
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+    .about-text p strong {
+      color: var(--text-main);
+    }
+
+    /* 4 Chiffres Clés */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+    .stat-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      text-align: center;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-ochre);
+    }
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--color-terracotta);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    [data-theme="dark"] .stat-number {
+      color: var(--color-ochre);
+    }
+    .stat-label {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* Centres d'intérêt */
+    .interests-container {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+    }
+    .interests-title {
+      font-size: 1.25rem;
+      margin-bottom: 22px;
+    }
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+    .interest-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background-color: var(--bg-surface-elevated);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      transition: all var(--transition-base);
+    }
+    .interest-item:hover {
+      border-color: var(--color-ochre);
+      transform: translateY(-2px);
+    }
+    .interest-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: rgba(224, 141, 44, 0.15);
+      color: var(--color-terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    [data-theme="dark"] .interest-icon {
+      color: var(--color-ochre);
+    }
+    .interest-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+    .interest-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 850px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .about-photo-card img {
+        height: 380px;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ==========================================================================
+       SECTION 3 : COMPÉTENCES & EXPÉRIENCES (#competences)
+       ========================================================================== */
+    .skills-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+
+    .skills-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      box-shadow: var(--shadow-sm);
+    }
+    .skills-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .skills-card h3 span.badge-num {
+      font-size: 0.8rem;
+      background-color: var(--color-indigo);
+      color: #FFF;
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-family: var(--font-sans);
+    }
+    [data-theme="dark"] .skills-card h3 span.badge-num {
+      background-color: var(--color-ochre);
+      color: #111;
+    }
+
+    .skill-bar-group {
+      margin-bottom: 22px;
+    }
+    .skill-bar-group:last-child {
+      margin-bottom: 0;
+    }
+    .skill-label-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+    .skill-progress-track {
+      width: 100%;
+      height: 9px;
+      background-color: var(--bg-surface-elevated);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+    .skill-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-indigo), var(--color-terracotta));
+      border-radius: var(--radius-full);
+      transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      width: 0; /* Animé en JS */
+    }
+    [data-theme="dark"] .skill-progress-fill {
+      background: linear-gradient(90deg, var(--color-ochre), var(--color-terracotta));
+    }
+
+    /* TIMELINE EXPÉRIENCES */
+    .timeline-wrap {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+    }
+    .timeline-title {
+      font-size: 1.45rem;
+      margin-bottom: 28px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      bottom: 6px;
+      left: 7px;
+      width: 2px;
+      background-color: var(--border-strong);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 36px;
+    }
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -32px;
+      top: 5px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: var(--bg-surface);
+      border: 3px solid var(--color-terracotta);
+    }
+    [data-theme="dark"] .timeline-dot {
+      border-color: var(--color-ochre);
+    }
+    .timeline-period {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--color-terracotta);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    [data-theme="dark"] .timeline-period {
+      color: var(--color-ochre);
+    }
+    .timeline-role {
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+    .timeline-company {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .timeline-bullets {
+      list-style: none;
+      padding-left: 0;
+    }
+    .timeline-bullets li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+      font-size: 0.94rem;
+    }
+    .timeline-bullets li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--color-terracotta);
+    }
+    [data-theme="dark"] .timeline-bullets li::before {
+      color: var(--color-ochre);
+    }
+
+    @media (max-width: 850px) {
+      .skills-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ==========================================================================
+       SECTION 4 : PROJETS (#projets)
+       ========================================================================== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 32px;
+    }
+
+    .project-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-base);
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--border-strong);
+    }
+
+    .project-visual {
+      position: relative;
+      height: 230px;
+      background-color: var(--bg-surface-elevated);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .project-card:hover .project-visual img {
+      transform: scale(1.04);
+    }
+
+    .project-visual-iconic {
+      background: linear-gradient(135deg, var(--color-indigo), var(--color-indigo-dark));
+      color: #FFFFFF;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+    .project-visual-iconic svg {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 12px;
+      stroke: var(--color-ochre);
+    }
+
+    .project-status-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background-color: rgba(18, 33, 61, 0.85);
+      color: #FFFFFF;
+      backdrop-filter: blur(8px);
+    }
+    .project-status-badge.wip {
+      background-color: var(--color-ochre);
+      color: #111417;
+    }
+
+    .project-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .project-year {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--color-terracotta);
+      margin-bottom: 6px;
+    }
+    [data-theme="dark"] .project-year {
+      color: var(--color-ochre);
+    }
+    .project-title {
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+    }
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      margin-bottom: 20px;
+    }
+    .project-tag {
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      background-color: var(--bg-surface-elevated);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+    }
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .project-btn-demo {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      background-color: var(--color-indigo);
+      color: #FFFFFF;
+      transition: all var(--transition-base);
+    }
+    [data-theme="dark"] .project-btn-demo {
+      background-color: var(--color-ochre);
+      color: #111417;
+    }
+    .project-btn-demo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(18, 33, 61, 0.25);
+    }
+    .project-btn-github {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      background-color: var(--bg-surface-elevated);
+      color: var(--text-main);
+      border: 1px solid var(--border-strong);
+      transition: all var(--transition-base);
+    }
+    .project-btn-github:hover {
+      border-color: var(--color-ochre);
+      color: var(--color-ochre);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       SECTION 5 : GALERIE (#galerie)
+       ========================================================================== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .gallery-thumb {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background-color: var(--bg-surface-elevated);
+      aspect-ratio: 4 / 3;
+      border: 1px solid var(--border-subtle);
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 0;
+      transition: all var(--transition-base);
+    }
+    .gallery-thumb:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-ochre);
+    }
+    .gallery-thumb img, .gallery-thumb .thumb-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .gallery-thumb:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(11, 23, 48, 0.92) 0%, rgba(11, 23, 48, 0.2) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+      color: #FFFFFF;
+      transition: opacity var(--transition-base);
+    }
+    .gallery-thumb-caption {
+      font-weight: 600;
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+    .gallery-thumb-sub {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* LIGHTBOX PERSONNALISÉE (JS natif) */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(11, 23, 48, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .lightbox-modal.active {
+      display: flex;
+      opacity: 1;
+    }
+    .lightbox-card {
+      position: relative;
+      max-width: 900px;
+      max-height: 90vh;
+      background-color: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-strong);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-lg);
+    }
+    .lightbox-img-wrap {
+      max-height: calc(90vh - 100px);
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .lightbox-img-wrap img {
+      max-height: 100%;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    .lightbox-footer {
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--bg-surface);
+      color: var(--text-main);
+      border-top: 1px solid var(--border-subtle);
+    }
+    .lightbox-footer p {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .lightbox-close-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #FFFFFF;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.4rem;
+      z-index: 10;
+      transition: background-color var(--transition-base);
+    }
+    .lightbox-close-btn:hover {
+      background-color: var(--color-terracotta);
+    }
+
+    /* ==========================================================================
+       SECTION 6 : CURRICULUM VITAE (#cv)
+       ========================================================================== */
+    .cv-banner {
+      background: linear-gradient(135deg, var(--color-indigo) 0%, var(--color-indigo-dark) 100%);
+      border-radius: var(--radius-lg);
+      padding: 56px 48px;
+      color: #FFFFFF;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 36px;
+      align-items: center;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+    [data-theme="dark"] .cv-banner {
+      background: linear-gradient(135deg, #182B4E 0%, #101B2E 100%);
+      border: 1px solid var(--border-strong);
+    }
+    .cv-banner::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(224, 141, 44, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cv-banner-content h3 {
+      font-size: 2rem;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+    }
+    .cv-banner-content p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.05rem;
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .cv-filename {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: monospace;
+      font-size: 0.88rem;
+      color: var(--color-ochre);
+      background-color: rgba(0, 0, 0, 0.25);
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+    }
+
+    .cv-btn-download {
+      background-color: var(--color-ochre);
+      color: #111417;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 16px rgba(224, 141, 44, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: all var(--transition-base);
+    }
+    .cv-btn-download:hover {
+      background-color: #FFFFFF;
+      color: var(--color-indigo);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .cv-banner {
+        grid-template-columns: 1fr;
+        padding: 36px 24px;
+      }
+    }
+
+    /* ==========================================================================
+       SECTION 7 : CONTACT (#contact)
+       ========================================================================== */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 840px;
+      margin-inline: auto;
+    }
+
+    .contact-info-panel {
+      padding: 0;
+    }
+    .contact-info-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 44px 38px;
+      box-shadow: var(--shadow-sm);
+    }
+    .contact-info-card h4 {
+      font-size: 1.45rem;
+      margin-bottom: 24px;
+    }
+    .contact-details-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+      margin-bottom: 30px;
+    }
+    .contact-details-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.98rem;
+      background-color: var(--bg-surface-elevated);
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+    .contact-details-item svg {
+      width: 24px;
+      height: 24px;
+      color: var(--color-ochre);
+      flex-shrink: 0;
+    }
+    .contact-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .contact-availability-box {
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      background-color: rgba(224, 141, 44, 0.1);
+      border: 1px solid rgba(224, 141, 44, 0.25);
+      font-size: 0.95rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      padding-block: 40px;
+      margin-top: 60px;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 14px;
+    }
+    .footer-copy {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Lien d'évitement accessibilité -->
+  <a href="#contenu" class="skip-link">Passer au contenu principal</a>
+
+  <!-- ==========================================================================
+       NAVIGATION FIXE (Scroll-spy, Hamburger, Thème)
+       ========================================================================== -->
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a href="#accueil" class="nav-logo" aria-label="Simadou Germain — Retour à l'accueil">
+        <span class="nav-logo-badge" aria-hidden="true">S</span>
+        <span>Germain A.</span>
+      </a>
+
+      <!-- Menu de navigation principal -->
+      <nav id="navigation-links" aria-label="Navigation principale">
+        <ul class="nav-menu">
+          <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+          <li><a href="#apropos" class="nav-link">À propos</a></li>
+          <li><a href="#competences" class="nav-link">Compétences</a></li>
+          <li><a href="#projets" class="nav-link">Projets</a></li>
+          <li><a href="#galerie" class="nav-link">Galerie</a></li>
+          <li><a href="#cv" class="nav-link">CV</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Bouton bascule de thème ☀️ / 🌙 -->
+        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Basculer vers le mode sombre" title="Basculer le thème">
+          <span id="themeIcon">🌙</span>
+        </button>
+
+        <!-- Menu Hamburger pour mobile -->
+        <button id="hamburgerBtn" class="hamburger-btn" type="button" aria-expanded="false" aria-controls="navigation-links" aria-label="Ouvrir le menu de navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <!-- ==========================================================================
+         SECTION 1 : ACCUEIL (#accueil) - HERO AVEC PHOTO EN ARRIÈRE-PLAN FONDUE
+         ========================================================================== -->
+    <section id="accueil" class="hero-section">
+      <!-- Photo de profil en arrière-plan fondue dans le dégradé -->
+      <img
+        src="assets/photo-profil.jpg"
+        alt="Photo de profil de Simadou Ahondo Kossi Germain"
+        class="hero-bg-photo"
+        width="1280"
+        height="1920"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      >
+      <!-- Overlay dégradé assurant le contraste parfait du texte -->
+      <div class="hero-backdrop-gradient" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-pulse" aria-hidden="true"></span>
+          <span>Disponible : Développeur Web/Mobile &amp; Cariste / Chariot élévateur</span>
+        </div>
+
+        <h1 class="hero-name">Simadou Ahondo<br><span>Kossi Germain</span></h1>
+        <p class="hero-role">Développeur Web &amp; Mobile — Cariste / Conduite d'engins — Lomé, Togo</p>
+
+        <p class="hero-bio">
+          Fort d'une solide formation pratique en <strong>logistique, transit douanier</strong> et d'une expérience concrète de <strong>conduite de chariot élévateur au Port Autonome de Lomé</strong>, je combine maîtrise des opérations de terrain et compétences avancées en <strong>développement web et mobile (D-CLIC / OIF)</strong>. Actuellement créateur de la plateforme <strong>e-Togo</strong>, je suis disponible aussi bien pour des missions et postes en <strong>développement logiciel</strong> que pour des opportunités professionnelles comme <strong>cariste / conducteur de chariots élévateurs</strong> (au Togo et dans la sous-région).
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#projets" class="btn btn-primary">Voir mes projets <span>↘</span></a>
+          <a href="assets/CV_Simadou_Ahondo_Germain.pdf" download="CV_Simadou_Ahondo_Germain.pdf" class="btn btn-outline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+            Télécharger mon CV
+          </a>
+        </div>
+
+        <!-- Carte contact rapide & Réseaux sociaux -->
+        <div class="hero-meta-panel">
+          <div class="quick-contacts">
+            <div class="quick-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Lomé, Togo</span>
+            </div>
+            <div class="quick-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:+22870301551">+228 70 30 15 51</a>
+            </div>
+            <div class="quick-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:ahondogermain@gmail.com">ahondogermain@gmail.com</a>
+            </div>
+            <div class="quick-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>Langues : Français (courant), Anglais (L2 en cours)</span>
+            </div>
+          </div>
+
+          <!-- Rangée d'icônes sociales cliquables avec SVG inline (Placeholders commentés) -->
+          <div class="social-row" aria-label="Réseaux sociaux de Germain">
+            <!-- Remplacer https://linkedin.com/in/TON-PROFIL par votre lien réel LinkedIn -->
+            <a href="https://www.linkedin.com/in/kossi-germain-simadou-ahondo-a02a51408" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Profil LinkedIn de Simadou">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg>
+            </a>
+            <!-- Remplacer https://github.com/TON-PROFIL par votre lien réel GitHub -->
+            <a href="https://github.com/ahondogermain-crypto" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Profil GitHub de Simadou">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+            </a>
+            <!-- Remplacer https://facebook.com/TON-PROFIL par votre lien réel Facebook -->
+           
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2 : À PROPOS (#apropos)
+         ========================================================================== */ -->
+    <section id="apropos" class="section-padding">
+      <div class="container">
+        <span class="section-kicker">01 / DÉMARCHE &amp; PARCOURS</span>
+        <h2 class="section-title">Un parcours entre logistique et code</h2>
+        <p class="section-subtitle">
+          Comment l'expérience concrète des opérations logistiques, du transit et des flux au port de Lomé forge une méthode de développement rigoureuse, pragmatique et orientée résultats.
+        </p>
+
+        <div class="about-grid">
+          <!-- Photo secondaire nette, encadrée pour se distinguer du Hero -->
+          <div class="about-photo-wrapper">
+            <div class="about-photo-card">
+              <img
+                src="assets/photo-profil.jpg"
+                alt="Portrait net de Simadou Ahondo Kossi Germain"
+                width="800"
+                height="1000"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="about-photo-caption">
+                <span>SIMADOU A. GERMAIN</span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-text">
+            <h3>Une trajectoire hybride et disciplinée</h3>
+            <p>
+              Titulaire d'un <strong>Baccalauréat Scientifique (Série D, 2022)</strong>, j'ai poursuivi avec l'obtention d'un <strong>CQP en Transport Logistique et Transit Douanier (2023)</strong>. Mon engagement pratique s'est matérialisé sur le terrain à travers un apprentissage poussé de la conduite d'engins et chariots élévateurs chez <strong>Synchari-Togo au Port Autonome de Lomé</strong>, où le respect scrupuleux des procédures de sécurité et la gestion des imprévus sont primordiaux.
+            </p>
+            <p>
+              Parallèlement à ma <strong>Licence 2 d'Anglais à l'Université de Lomé</strong> (un atout majeur pour la documentation technique et la collaboration internationale), j'ai entrepris une reconversion d'envergure dans le <strong>Développement Web, Mobile et IA via la formation D-CLIC (OIF)</strong>.
+            </p>
+            <p>
+              Cette double compétence me confère une vision rare : je ne code pas seulement pour aligner des pixels, mais pour concevoir des outils qui fluidifient les opérations, automatisent les gestes répétitifs et créent une valeur directe pour les utilisateurs finaux.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4 Chiffres Clés -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">3+</div>
+            <div class="stat-label">Années d'immersion opérationnelle &amp; logistique</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2026</div>
+            <div class="stat-label">Lancement des solutions e-Togo &amp; Parc Auto</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Rigueur terrain appliquée à la conception logicielle</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Langues de travail : Français &amp; Anglais technique</div>
+          </div>
+        </div>
+
+        <!-- Centres d'intérêt avec icônes -->
+        <div class="interests-container">
+          <h3 class="interests-title">Centres d'intérêt &amp; Équilibre de vie</h3>
+          <div class="interests-grid">
+            <div class="interest-item">
+              <div class="interest-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"></path></svg>
+              </div>
+              <div>
+                <div class="interest-name">Sport &amp; Trail</div>
+                <small style="color:var(--text-muted);">Endurance et dépassement</small>
+              </div>
+            </div>
+            <div class="interest-item">
+              <div class="interest-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </div>
+              <div>
+                <div class="interest-name">Technologie &amp; IA</div>
+                <small style="color:var(--text-muted);">Veille continue et LLMs</small>
+              </div>
+            </div>
+            <div class="interest-item">
+              <div class="interest-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              </div>
+              <div>
+                <div class="interest-name">Lecture &amp; Littérature</div>
+                <small style="color:var(--text-muted);">Développement personnel &amp; récits</small>
+              </div>
+            </div>
+            <div class="interest-item">
+              <div class="interest-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6 13.87A8 8 0 0 1 12 3a8 8 0 0 1 6 10.87"></path><path d="M4 17h16v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2z"></path></svg>
+              </div>
+              <div>
+                <div class="interest-name">Cuisine</div>
+                <small style="color:var(--text-muted);">Précision des saveurs &amp; partage</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3 : COMPÉTENCES & TIMELINE (#competences)
+         ========================================================================== -->
+    <section id="competences" class="section-padding" style="background-color: var(--bg-surface-elevated);">
+      <div class="container">
+        <span class="section-kicker">02 / EXPERTISE &amp; SAVOIR-FAIRE</span>
+        <h2 class="section-title">Compétences &amp; Expériences</h2>
+        <p class="section-subtitle">
+          Une alliance entre habiletés techniques numériques et maîtrise des chaînes logistiques réelles.
+        </p>
+
+        <!-- Compétences en Barres animées réparties en 3 pôles distincts -->
+        <div class="skills-layout">
+          <!-- Pôle 1 : Développement Web & Mobile -->
+          <div class="skills-card">
+            <h3><span class="badge-num" aria-hidden="true">DEV</span> Développement Web &amp; Mobile</h3>
+            
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>HTML5 / CSS3 (Responsive UI/UX)</span>
+                <span>88%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="88%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>JavaScript (ES6+ / DOM / Async)</span>
+                <span>78%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="78%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>PHP (Laravel 11 / MVC)</span>
+                <span>82%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="82%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>Python (Scripts &amp; Back-end)</span>
+                <span>75%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="75%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>Bases de données (MySQL)</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="80%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pôle 2 : Logistique & Conduite d'engins -->
+          <div class="skills-card">
+            <h3><span class="badge-num" aria-hidden="true">LOG</span> Logistique &amp; Chariot élévateur</h3>
+
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>Conduite Chariot élévateur (Cariste PAL)</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="90%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>Gestion de Stock &amp; Inventaire</span>
+                <span>92%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="92%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>Sécurité portuaire &amp; Normes HSE</span>
+                <span>95%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="95%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>Transit douanier &amp; Procédures import/export</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="85%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>Pack Office (Excel logistique, Word)</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="90%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pôle 3 : Compétences personnelles & Relationnelles -->
+          <div class="skills-card">
+            <h3><span class="badge-num" aria-hidden="true">SOFT</span> Compétences personnelles</h3>
+
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>Sérieux, Discipline &amp; Rigueur</span>
+                <span>95%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="95%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>Travail d'équipe &amp; Communication terrain</span>
+                <span>95%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="95%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>Créativité &amp; Résolution de problèmes</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="90%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>Adaptation rapide au changement</span>
+                <span>88%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="88%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-group">
+              <div class="skill-label-row">
+                <span>Anglais technique (Licence 2 en cours)</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expériences professionnelles en Timeline -->
+        <div class="timeline-wrap">
+          <h3 class="timeline-title">Parcours &amp; Expériences professionnelles</h3>
+          <div class="timeline">
+            <!-- Expérience 1 : Stage en développement web pour AL-T -->
+            <div class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <span class="timeline-period">Stage professionnel</span>
+              <h4 class="timeline-role">Stage en développement web — Plateforme AL-T</h4>
+              <p class="timeline-company">Plateforme AL-T — Lomé, Togo</p>
+              <ul class="timeline-bullets">
+                <li>Modernisation complète de l'interface utilisateur (UI/UX) pour une navigation plus fluide, intuitive et responsive.</li>
+                <li>Intégration de composants web dynamiques et optimisation de la compatibilité multi-écrans (mobile, tablette, desktop).</li>
+                <li>Amélioration des performances de chargement et de l'accessibilité des pages de la plateforme.</li>
+                <li>Collaboration étroite avec l'équipe technique pour l'intégration des maquettes et la résolution de bugs d'affichage.</li>
+              </ul>
+            </div>
+
+            <!-- Expérience 2 : Apprenti Cariste -->
+            <div class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <span class="timeline-period">2024 — Aujourd'hui</span>
+              <h4 class="timeline-role">Apprenti Cariste / Conduite d'engins de manutention</h4>
+              <p class="timeline-company">Synchari-Togo — Port Autonome de Lomé (PAL)</p>
+              <ul class="timeline-bullets">
+                <li>Manutention et déplacement sécurisé de charges lourdes et conteneurs sur zones logistiques portuaires.</li>
+                <li>Contrôle préventif et vérification technique rigoureuse du matériel avant prise de poste.</li>
+                <li>Coordination active avec les chefs d'équipes et transporteurs pour optimiser les cadences de chargement/déchargement.</li>
+                <li>Application stricte des normes de sécurité internationales relatives aux opérations en zone sous douane.</li>
+              </ul>
+            </div>
+
+            <!-- Expérience 3 : Stage Transit Douanier -->
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4 : PROJETS (#projets)
+         ========================================================================== -->
+    <section id="projets" class="section-padding">
+      <div class="container">
+        <span class="section-kicker">03 / RÉALISATIONS</span>
+        <h2 class="section-title">Projets sélectionnés</h2>
+        <p class="section-subtitle">
+          Des plateformes numériques pensées pour répondre à des problématiques économiques et logistiques concrètes.
+        </p>
+
+        <div class="projects-grid">
+          <!-- Projet A : e-Togo -->
+          <article class="project-card">
+            <div class="project-visual">
+              <img src="assets/images/IMG-20260926-WA9236.jpg" alt="Aperçu visuel de la marketplace e-Togo" loading="lazy">
+              <span class="project-status-badge wip">En développement</span>
+            </div>
+            <div class="project-body">
+              <span class="project-year">2026</span>
+              <h3 class="project-title">e-Togo — Marketplace locale</h3>
+              <p class="project-desc">
+                Plateforme marketplace innovante connectant directement les commerçants des marchés locaux togolais (Grand Marché de Lomé, Hedzranawoé, etc.) aux acheteurs et entreprises en ligne. Elle simplifie le référencement des produits du terroir, la commande mobile et l'organisation du circuit de livraison urbaine.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Laravel 11</span>
+                <span class="project-tag">PHP / MySQL</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">Responsive Mobile</span>
+              </div>
+              <div class="project-actions">
+                <!-- Remplacer https://etogo.tg par le lien réel de démonstration ou de production -->
+                <a href="https://etogo.com" target="_blank" rel="noopener noreferrer" class="project-btn-demo" aria-label="Voir la démonstration de e-Togo">
+                  <span>Voir la démo</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+                <!-- Remplacer par le lien réel de votre dépôt GitHub -->
+                <a href="https://github.com/ahondogermain-crypto" target="_blank" rel="noopener noreferrer" class="project-btn-github" aria-label="Voir le code source de e-Togo sur GitHub">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+                  <span>Code source</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projet B : Plateforme AL-T (Modernisation UI/UX) -->
+          <article class="project-card">
+            <div class="project-visual">
+              <img src="assets/images/1787517393072.png" alt="Aperçu du travail de développement et modernisation sur la plateforme AL-T" loading="lazy">
+              <span class="project-status-badge">Mission réalisée</span>
+            </div>
+            <div class="project-body">
+              <span class="project-year">Stage professionnel</span>
+              <h3 class="project-title">Plateforme AL-T — Refonte &amp; Modernisation UI</h3>
+              <p class="project-desc">
+                Modernisation complète de l'interface utilisateur pour offrir une navigation plus fluide, intuitive et parfaitement responsive sur mobile et tablette. Intégration de composants web dynamiques et optimisation des performances.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML5 / CSS3</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">UI / UX Design</span>
+                <span class="project-tag">Responsive Design</span>
+              </div>
+              <div class="project-actions">
+                <!-- Remplacer par le lien réel de votre projet / démo -->
+                <a href="https://github.com/ahondogermain-crypto" target="_blank" rel="noopener noreferrer" class="project-btn-demo" aria-label="Voir la plateforme AL-T">
+                  <span>Voir le projet</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+                <a href="https://github.com/ahondogermain-crypto" target="_blank" rel="noopener noreferrer" class="project-btn-github" aria-label="Voir les réalisations sur GitHub">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projet C : Étude Gestion de parc automobile -->
+          <article class="project-card">
+            <div class="project-visual">
+              <div class="project-visual-iconic">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                <strong style="font-size:1.15rem; letter-spacing:0.04em;">LOGISTIQUE &amp; FLOTTE</strong>
+              </div>
+              <span class="project-status-badge">Juin 2026</span>
+            </div>
+            <div class="project-body">
+              <span class="project-year">Juin 2026</span>
+              <h3 class="project-title">Étude « Gestion de parc automobile »</h3>
+              <p class="project-desc">
+                Projet d'analyse et de modélisation logicielle dédié à l'optimisation des flottes de transport de marchandises : planification des transporteurs, carburant et maintenance préventive.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Modélisation UML</span>
+                <span class="project-tag">Gestion de Flotte</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">Maintenance</span>
+              </div>
+              <div class="project-actions">
+                <a href="#contact" class="project-btn-demo" aria-label="Demander la documentation de l'étude">
+                  <span>En savoir plus</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5 : GALERIE (#galerie)
+         ========================================================================== -->
+    <section id="galerie" class="section-padding" style="background-color: var(--bg-surface-elevated);">
+      <div class="container">
+        <span class="section-kicker">04 / EN IMAGES</span>
+        <h2 class="section-title">Galerie terrain &amp; projets</h2>
+        <p class="section-subtitle">
+          Aperçu visuel de l'environnement logistique au port de Lomé, des sessions d'apprentissage sur chariot élévateur et des étapes de prototypage. Cliquez sur une vignette pour l'agrandir.
+        </p>
+
+        <div class="gallery-grid">
+          <!-- Vignette 1 -->
+          <button type="button" class="gallery-thumb" data-full="assets/images/1787517393072.png" data-caption="Opérations et environnement logistique au Port Autonome de Lomé">
+            <img src="assets/images/1787517393072.png" alt="Germain en équipement de sécurité au port de Lomé" loading="lazy">
+            <div class="gallery-thumb-overlay">
+              <div class="gallery-thumb-caption">Environnement Portuaire PAL</div>
+              <div class="gallery-thumb-sub"><span>Agrandir</span> ↗</div>
+            </div>
+          </button>
+
+          <!-- Vignette 2 -->
+          <button type="button" class="gallery-thumb" data-full="assets/images/IMG-20260926-WA9236.jpg" data-caption="Interface et maquette de la plateforme marketplace e-Togo">
+            <img src="assets/images/IMG-20260926-WA9236.jpg" alt="Aperçu des interfaces de la plateforme e-Togo" loading="lazy">
+            <div class="gallery-thumb-overlay">
+              <div class="gallery-thumb-caption">Maquette e-Togo</div>
+              <div class="gallery-thumb-sub"><span>Agrandir</span> ↗</div>
+            </div>
+          </button>
+
+          <!-- Vignette 3 -->
+          <button type="button" class="gallery-thumb" data-full="assets/images/photo.jpg" data-caption="Germain en tenue de travail réglementaire pour les manœuvres d'engins">
+            <img src="assets/images/photo.jpg" alt="Portrait au pied des engins portuaires" loading="lazy">
+            <div class="gallery-thumb-overlay">
+              <div class="gallery-thumb-caption">Apprentissage Cariste</div>
+              <div class="gallery-thumb-sub"><span>Agrandir</span> ↗</div>
+            </div>
+          </button>
+
+          <!-- Vignette 4 -->
+          <button type="button" class="gallery-thumb" data-full="assets/images/port-lome.svg" data-caption="Schéma conceptuel des zones de conteneurs et flux du Port Autonome de Lomé">
+            <img src="assets/images/port-lome.svg" alt="Schéma portuaire du Port de Lomé" loading="lazy">
+            <div class="gallery-thumb-overlay">
+              <div class="gallery-thumb-caption">Infrastructures Port de Lomé</div>
+              <div class="gallery-thumb-sub"><span>Agrandir</span> ↗</div>
+            </div>
+          </button>
+
+          <!-- Vignette 5 -->
+          <button type="button" class="gallery-thumb" data-full="assets/images/entrepot.svg" data-caption="Organisation des rayonnages et logistique de stockage en entrepôt moderne">
+            <img src="assets/images/entrepot.svg" alt="Schéma d'organisation d'entrepôt logistique" loading="lazy">
+            <div class="gallery-thumb-overlay">
+              <div class="gallery-thumb-caption">Gestion de Stock &amp; Entrepôt</div>
+              <div class="gallery-thumb-sub"><span>Agrandir</span> ↗</div>
+            </div>
+          </button>
+
+          <!-- Vignette 6 -->
+          <button type="button" class="gallery-thumb" data-full="assets/images/IMG-20260926-WA9236.jpg" data-caption="Wireframes et parcours utilisateurs pour l'étude de gestion de parc automobile">
+            <img src="assets/images/IMG-20260926-WA9236.jpg" alt="Wireframes du système de parc automobile" loading="lazy">
+            <div class="gallery-thumb-overlay">
+              <div class="gallery-thumb-caption">Wireframes Parc Automobile</div>
+              <div class="gallery-thumb-sub"><span>Agrandir</span> ↗</div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL SANS DÉPENDANCE -->
+    <div id="galleryLightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Aperçu d'image en grand">
+      <div class="lightbox-card">
+        <button id="lightboxCloseBtn" class="lightbox-close-btn" type="button" aria-label="Fermer l'aperçu">&times;</button>
+        <div class="lightbox-img-wrap">
+          <img id="lightboxImg" src="" alt="">
+        </div>
+        <div class="lightbox-footer">
+          <p id="lightboxCaption"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         SECTION 6 : CV (#cv)
+         ========================================================================== -->
+    <section id="cv" class="section-padding">
+      <div class="container">
+        <div class="cv-banner">
+          <div class="cv-banner-content">
+            <span class="section-kicker" style="color:var(--color-ochre);">05 / CURRICULUM VITAE</span>
+            <h3>Consultez mon profil détaillé</h3>
+            <p>
+              Retrouvez l'intégralité de mon parcours académique, mes certifications professionnelles en transit douanier, mon expérience de conduite d'engins ainsi que mes projets de développement web &amp; mobile au format PDF.
+            </p>
+            <div class="cv-filename">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              
+            </div>
+          </div>
+          <div>
+            <a href="assets/CV_Simadou_Ahondo_Germain.pdf" download="CV_Simadou_Ahondo_Germain.pdf" class="cv-btn-download">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+              Télécharger le CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 7 : CONTACT (#contact) AVEC VALIDATION RENFORCÉE
+         ========================================================================== -->
+    <section id="contact" class="section-padding" style="background-color: var(--bg-surface-elevated);">
+      <div class="container">
+        <span class="section-kicker">06 / CONTACT &amp; ÉCHANGES</span>
+        <h2 class="section-title">Discutons de votre projet</h2>
+        <p class="section-subtitle">
+          Vous recherchez un développeur web/mobile rigoureux ou un <strong>cariste qualifié (conduite de chariot élévateur)</strong> pour renforcer vos opérations ? Contactez-moi directement par téléphone, WhatsApp ou e-mail.
+        </p>
+
+        <div class="contact-layout">
+          <!-- Coordonnées directes et actions de contact rapide -->
+          <div class="contact-info-panel">
+            <div class="contact-info-card">
+              <h4>Coordonnées directes &amp; Opportunités</h4>
+              <div class="contact-details-list">
+                <div class="contact-details-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <div>
+                    <strong style="display:block; font-size:0.85rem; color:var(--text-faint);">TÉLÉPHONE &amp; WHATSAPP</strong>
+                    <a href="tel:+22870301551" style="font-weight:600;">+228 70 30 15 51</a>
+                  </div>
+                </div>
+
+                <div class="contact-details-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <div>
+                    <strong style="display:block; font-size:0.85rem; color:var(--text-faint);">E-MAIL PROFESSIONNEL</strong>
+                    <a href="mailto:ahondogermain@gmail.com" style="font-weight:600;">ahondogermain@gmail.com</a>
+                  </div>
+                </div>
+
+                <div class="contact-details-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <div>
+                    <strong style="display:block; font-size:0.85rem; color:var(--text-faint);">LOCALISATION &amp; MOBILITÉ</strong>
+                    <span>Lomé, Togo (ouvert à la sous-région et au Ghana)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Boutons d'action directe -->
+              <div class="contact-actions-row">
+                <a href="mailto:ahondogermain@gmail.com" class="btn btn-primary">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <span>Envoyer un e-mail</span>
+                </a>
+                <a href="tel:+22870301551" class="btn btn-outline">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>Appeler directement</span>
+                </a>
+              </div>
+
+              <div class="contact-availability-box">
+                <span class="hero-badge-pulse" style="margin-left:2px;" aria-hidden="true"></span>
+                <span><strong>Statut de recherche :</strong> Ouvert aux postes de <strong>Développeur Web &amp; Mobile</strong> et postes de <strong>Cariste / Conduite de chariot élévateur</strong> (Togo &amp; sous-région).</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/kossi-germain-simadou-ahondo-a02a51408" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Profil LinkedIn de Simadou">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg>
+        </a>
+        <a href="https://github.com/ahondogermain-crypto" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Profil GitHub de Simadou">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path></svg>
+        </a>
+        
+      </div>
+      <p class="footer-copy">
+        &copy; <span id="currentYear">2026</span> Simadou Ahondo Kossi Germain — Tous droits réservés. Lomé, Togo.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       JAVASCRIPT INTÉGRÉ (Navigation, Thème, Scroll-spy, Compétences & Lightbox)
+       ========================================================================== -->
+  <script>
+    (function () {
+      "use strict";
+
+      /* 1. THÈME CLAIR / SOMBRE */
+      const themeToggleBtn = document.getElementById("themeToggleBtn");
+      const themeIcon = document.getElementById("themeIcon");
+      const htmlElement = document.documentElement;
+
+      function applyTheme(theme) {
+        htmlElement.setAttribute("data-theme", theme);
+        const isDark = theme === "dark";
+        themeIcon.textContent = isDark ? "☀️" : "🌙";
+        themeToggleBtn.setAttribute(
+          "aria-label",
+          isDark ? "Basculer vers le mode clair" : "Basculer vers le mode sombre"
+        );
+        themeToggleBtn.title = isDark ? "Activer le mode clair" : "Activer le mode sombre";
+      }
+
+      const savedTheme = localStorage.getItem("simadou_portfolio_theme");
+      if (savedTheme) {
+        applyTheme(savedTheme);
+      } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        applyTheme("dark");
+      } else {
+        applyTheme("light");
+      }
+
+      themeToggleBtn.addEventListener("click", () => {
+        const currentTheme = htmlElement.getAttribute("data-theme") || "light";
+        const nextTheme = currentTheme === "dark" ? "light" : "dark";
+        applyTheme(nextTheme);
+        try {
+          localStorage.setItem("simadou_portfolio_theme", nextTheme);
+        } catch (e) {
+          /* Fallback */
+        }
+      });
+
+      /* 2. NAVIGATION RESPONSIVE (HAMBURGER) */
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburgerBtn.addEventListener("click", () => {
+        const isExpanded = hamburgerBtn.getAttribute("aria-expanded") === "true";
+        hamburgerBtn.setAttribute("aria-expanded", String(!isExpanded));
+        navMenu.classList.toggle("open", !isExpanded);
+      });
+
+      navMenu.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburgerBtn.setAttribute("aria-expanded", "false");
+          navMenu.classList.remove("open");
+        });
+      });
+
+      /* 3. SCROLL-SPY (Mise en valeur du lien actif) */
+      const sections = document.querySelectorAll("main section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      function updateActiveNav() {
+        const scrollPosition = window.scrollY + 120;
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute("id");
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            navLinks.forEach((link) => {
+              if (link.getAttribute("href") === `#${sectionId}`) {
+                link.classList.add("active");
+              } else {
+                link.classList.remove("active");
+              }
+            });
+          }
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveNav, { passive: true });
+      window.addEventListener("load", updateActiveNav);
+
+      /* 4. ANIMATION DES BARRES DE PROGRESSION DES COMPÉTENCES */
+      const skillFills = document.querySelectorAll(".skill-progress-fill");
+      let skillsAnimated = false;
+
+      function checkSkillsInView() {
+        if (skillsAnimated) return;
+        const skillsSection = document.getElementById("competences");
+        if (!skillsSection) return;
+
+        const rect = skillsSection.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.8) {
+          skillFills.forEach((fill) => {
+            const targetWidth = fill.getAttribute("data-progress");
+            if (targetWidth) fill.style.width = targetWidth;
+          });
+          skillsAnimated = true;
+        }
+      }
+
+      window.addEventListener("scroll", checkSkillsInView, { passive: true });
+      window.addEventListener("load", checkSkillsInView);
+
+      /* 5. GALERIE LIGHTBOX */
+      const lightboxModal = document.getElementById("galleryLightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxCaption = document.getElementById("lightboxCaption");
+      const lightboxCloseBtn = document.getElementById("lightboxCloseBtn");
+      const galleryThumbs = document.querySelectorAll(".gallery-thumb");
+
+      galleryThumbs.forEach((thumb) => {
+        thumb.addEventListener("click", () => {
+          const fullSrc = thumb.getAttribute("data-full");
+          const caption = thumb.getAttribute("data-caption");
+          lightboxImg.src = fullSrc;
+          lightboxImg.alt = caption || "Image agrandie";
+          lightboxCaption.textContent = caption || "";
+          lightboxModal.classList.add("active");
+          lightboxCloseBtn.focus();
+        });
+      });
+
+      function closeLightbox() {
+        lightboxModal.classList.remove("active");
+        lightboxImg.src = "";
+      }
+
+      lightboxCloseBtn.addEventListener("click", closeLightbox);
+      lightboxModal.addEventListener("click", (e) => {
+        if (e.target === lightboxModal) {
+          closeLightbox();
+        }
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lightboxModal.classList.contains("active")) {
+          closeLightbox();
+        }
+      });
+
+      /* 6. MISE À JOUR DE L'ANNÉE DU FOOTER */
+      const yearSpan = document.getElementById("currentYear");
+      if (yearSpan) {
+        yearSpan.textContent = String(new Date().getFullYear());
+      }
+    })();
+  </script>
+</body>
+</html>

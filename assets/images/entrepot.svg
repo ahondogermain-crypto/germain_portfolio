@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder vidéo de manœuvre en entrepôt</title>
+  <desc id="desc">Illustration originale de rayonnages d’entrepôt, à remplacer par une image ou une vidéo.</desc>
+  <rect width="720" height="440" fill="#e9e7dc"/>
+  <path d="M95 350V92m265 258V92m265 258V92M82 128h555M82 220h555M82 310h555" fill="none" stroke="#173d32" stroke-width="10"/>
+  <path d="M115 143h96v69h-96zm110 0h112v69H225zm-110 92h116v66H115zm132 0h88v66h-88zm148-92h116v69H395zm136 0h65v69h-65zm-136 92h82v66h-82zm102 0h102v66H497z" fill="#b87950" stroke="#173d32" stroke-width="4"/>
+  <rect y="354" width="720" height="86" fill="#d4d7c9"/>
+  <text x="360" y="402" fill="#173d32" font-family="monospace" font-size="13" text-anchor="middle">PLACEHOLDER — VIDÉO À AJOUTER</text>
+</svg>
